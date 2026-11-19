@@ -25,7 +25,7 @@ Use either part alone or both. Both together give you a feeder with a camera whe
 
 1. **Check your unit:** product ID `cjrm04np59ut4pwb`, firmware V68.01.10 in the Smart Life app, and telnet port 23 open ([device.md](docs/device.md)).
 2. **Get the local key** for tuya-local while the feeder is still online (for example with tinytuya's wizard).
-3. **Log in over telnet** as root. It uses the factory login, which isn't published here.
+3. **Log in over telnet** as root. It uses the factory login, user `root` pass `AK2040jk` ([source](https://www.linkedin.com/pulse/snhack-attack-how-hackers-could-turn-your-smart-pet-feeder-bongiorni-fxtsf/))
 4. **Back up the flash** to your PC ([install.md § 2](docs/install.md#2-back-up-the-flash)).
 5. **Build the library** with the matching toolchain: `scripts/get_toolchain.sh`, then `scripts/build.sh`.
 6. **Install two files** in the feeder's writable partition: the library and the boot hook. Optionally add a one-line config to pick the parts.
