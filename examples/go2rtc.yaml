@@ -1,0 +1,10 @@
+# go2rtc: read the feeder's raw H.265 stream and re-serve it.
+# Replace 192.0.2.50 with the feeder's address. The hook accepts one client at a time;
+# go2rtc holds that single connection and shares it with every viewer.
+streams:
+  # Original H.265 1080p, no re-encoding. Plays in Safari/iOS and in browsers with HEVC decode.
+  feeder:
+    - "exec:ffmpeg -hide_banner -v error -use_wallclock_as_timestamps 1 -f hevc -i tcp://192.0.2.50:8556 -c copy -rtsp_transport tcp -f rtsp {output}"
+  # H.264 transcode for browsers and clients without HEVC (runs only while someone watches).
+  feeder_h264:
+    - "ffmpeg:feeder#video=h264"

@@ -1,0 +1,16 @@
+# build output
+build/
+# never commit device data: flash backups contain Wi-Fi credentials and Tuya keys,
+# and the vendor firmware is not ours to redistribute
+backup/
+rootfs/
+*.bin
+*.img
+# captures from your own home
+*.h265
+*.h264
+*.mp4
+*.png
+*.jpg
+__pycache__/
+*.pyc

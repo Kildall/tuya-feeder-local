@@ -1,0 +1,4 @@
+# shell scripts run on the device and must keep Unix line endings
+*.sh text eol=lf
+*.c text eol=lf
+*.py text eol=lf
